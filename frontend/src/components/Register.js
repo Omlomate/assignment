@@ -24,7 +24,7 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/auth/register", formData);
+      await axios.post("https://assignment-zxhj.onrender.com/api/auth/register", formData);
       navigate("/login"); // Redirect to login page
     } catch (err) {
       setError(err.response?.data?.message || "Registration failed. Please try again.");

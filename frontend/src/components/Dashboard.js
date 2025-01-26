@@ -32,7 +32,7 @@ function Dashboard() {
   const fetchItems = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://localhost:5000/api/items'); // Correct backend API endpoint
+      const response = await axios.get('https://assignment-zxhj.onrender.com/api/items'); // Correct backend API endpoint
       setItems(response.data);
     } catch (error) {
       console.error('Error fetching items:', error);
@@ -44,7 +44,7 @@ function Dashboard() {
 
   const handleAddItem = async (newItem) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/items', newItem); // Correct backend API endpoint
+      const response = await axios.post('https://assignment-zxhj.onrender.com/api/items', newItem); // Correct backend API endpoint
       setItems([...items, response.data]);
       toast.success('Item added successfully');
       setShowForm(false); // Hide form after adding
@@ -61,7 +61,7 @@ function Dashboard() {
     }
   
     try {
-      await axios.put(`http://localhost:5000/api/items/${updatedItem._id}`, updatedItem); // Ensure that _id is included in the URL
+      await axios.put(`https://assignment-zxhj.onrender.com/api/items/${updatedItem._id}`, updatedItem); // Ensure that _id is included in the URL
       setItems(items.map((item) => (item._id === updatedItem._id ? { ...item, ...updatedItem } : item)));
       toast.success('Item updated successfully');
       setShowForm(false); // Hide form after editing
@@ -74,7 +74,7 @@ function Dashboard() {
 
   const handleDeleteItem = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/items/${id}`); // Correct backend API endpoint
+      await axios.delete(`https://assignment-zxhj.onrender.com/api/items/${id}`); // Correct backend API endpoint
       setItems(items.filter((item) => item._id !== id));
       toast.success('Item deleted successfully');
     } catch (error) {
