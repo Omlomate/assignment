@@ -1,0 +1,200 @@
+/* Overall Dashboard Layout */
+.dashboard {
+  display: flex;
+}
+
+/* Sidebar-Content Setup */
+.content {
+  margin-left: 250px; /* Matches the width of the fixed sidebar */
+  padding: 20px;
+  flex-grow: 1; /* Allows the content to occupy the remaining space */
+  overflow-y: auto;
+  background: linear-gradient(to right, #fff8e1, #fffde7); /* Subtle gradient background */
+  min-height: 100vh; /* Ensures the content fills the viewport height */
+  box-sizing: border-box;
+}
+
+/* Sticky Header Title */
+.content h1 {
+  color: #8b0000;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10; /* Keeps it above other elements */
+  background: rgba(255, 255, 255, 0.9); /* Optional: Transparent white background for sticky effect */
+  padding: 10px 0;
+  border-bottom: 2px solid #ddd; /* Adds separation line for header */
+}
+
+/* Subheading: Wedding Date */
+.wedding-date {
+  color: #555;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  position: sticky;
+  top: 50px;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.9); /* Matches header background */
+  padding: 5px 0;
+  border-bottom: 1px solid #ddd; /* Adds subtle line for distinction */
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  position: sticky;
+  top: 100px;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.9); /* Sticky background */
+  padding: 5px 0;
+  border-bottom: 1px solid #ddd;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #444;
+}
+
+/* Card Container */
+.card-container {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Space between cards */
+  z-index: 1;
+}
+
+/* Individual Cards */
+.card-container .card {
+  background: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-container .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .content {
+    margin-left: 0; /* Remove sidebar margin */
+    padding: 10px;
+  }
+
+  .content h1 {
+    font-size: 2rem; /* Adjust title size */
+  }
+
+  .card-container {
+    grid-template-columns: 1fr; /* Single column layout for small screens */
+  }
+}
+
+
+/* Dashboard container */
+.dashboard {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+/* Greeting title */
+.dashboard h1 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Data table */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.data-table th,
+.data-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.data-table th {
+  background-color: #007bff;
+  color: white;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.data-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.data-table td button {
+  padding: 6px 12px;
+  margin-right: 8px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.data-table td button:first-child {
+  background-color: #28a745; /* Edit - green */
+}
+
+.data-table td button:last-child {
+  background-color: #dc3545; /* Delete - red */
+}
+
+/* Add button */
+.dashboard button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.dashboard button:hover {
+  background-color: #0056b3;
+}
+
+/* Loader */
+.loader {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.loader::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  margin: 20px auto;
+  border: 5px solid #007bff;
+  border-top: 5px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
